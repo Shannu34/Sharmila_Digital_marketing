@@ -54,34 +54,65 @@ export const certifications = [
 // Keep metric fields empty until supporting analytics or reports are available.
 export const projects = [
   {
-    name: 'Social Media Campaign Portfolio',
+    slug: 'website-digital-initiatives',
+    name: 'Website & Digital Initiatives',
+    client: 'Vikrics OPC Private Limited',
+    category: 'Digital Experience',
+    status: 'Experience-based case study',
+    period: 'September 2024 – July 2026',
+    summary: 'A cross-functional body of work spanning website content, SEO activities, web application development and user-interface work.',
+    challenge: 'The work covered several connected digital touchpoints. The specific business brief, starting metrics and priority audience for each initiative need to be confirmed before a more detailed public case study is published.',
+    role: 'Contributed to website and digital initiatives across content, SEO activities, web application development and UI work.',
+    execution: [
+      'Supported website and digital content activities.',
+      'Contributed to SEO-related work and website improvements.',
+      'Worked on web application development and user-interface tasks.'
+    ],
+    outcome: 'Contributions were made across the listed workstreams. Verified business outcomes, analytics and campaign metrics have not yet been supplied, so no performance claims are presented.',
+    tools: ['Website platforms — confirm exact tools', 'SEO tools — confirm exact tools', 'Design / development tools — confirm project stack'],
+    metrics: [],
+    evidence: 'Add approved screenshots, URLs, analytics exports or deliverables before publishing detailed outcomes.',
+    featured: true
+  },
+  {
+    slug: 'social-media-campaign',
+    name: 'Social Media Campaign',
+    client: 'Client / brand to be confirmed',
     category: 'Social Media Marketing',
-    status: 'Project details to be confirmed',
-    summary: 'A space to present approved social media calendars, creative samples, publishing work and campaign learnings.',
-    objective: 'Describe the business goal and target audience.',
-    approach: 'Document the content strategy, formats, publishing cadence and optimisation approach.',
-    results: 'Add verified reach, engagement, clicks or enquiries only when supported by platform insights.',
-    metrics: []
+    status: 'Awaiting project details',
+    period: 'Add campaign dates',
+    summary: 'A case study slot for a campaign you personally planned, created, published or managed.',
+    challenge: 'Add the client brief, target audience and campaign objective.',
+    role: 'Confirm your exact responsibilities and which parts you personally handled.',
+    execution: [
+      'Add the content formats and platforms used.',
+      'Add the publishing schedule and creative approach.',
+      'Add audience or community management activities, if applicable.'
+    ],
+    outcome: 'Add verified reach, impressions, engagement, clicks or enquiries only when supported by platform insights.',
+    tools: ['Add the tools actually used'],
+    metrics: [],
+    evidence: 'Add approved post links, creative samples and platform insights. Remove any confidential client information.'
   },
   {
-    name: 'SEO & Content Strategy',
-    category: 'SEO / Content Marketing',
-    status: 'Project details to be confirmed',
-    summary: 'A case study format for keyword research, content planning, website optimisation and search visibility.',
-    objective: 'Describe the search visibility or content problem.',
-    approach: 'Document keyword mapping, on-page work, technical observations and content improvements.',
-    results: 'Add verified Search Console or analytics outcomes when available.',
-    metrics: []
-  },
-  {
-    name: 'Paid Campaign Planning',
-    category: 'Performance Marketing',
-    status: 'Execution evidence to be confirmed',
-    summary: 'A case study format for campaign objectives, audience research, creative testing and measurement.',
-    objective: 'Describe the campaign objective and conversion action.',
-    approach: 'Document campaign structure, audience, creative, budget and tracking setup.',
-    results: 'Add verified spend, leads, CPC, CPL and conversion rate only when available.',
-    metrics: []
+    slug: 'seo-content-project',
+    name: 'SEO & Content Project',
+    client: 'Website / brand to be confirmed',
+    category: 'SEO & Content Marketing',
+    status: 'Awaiting project details',
+    period: 'Add project dates',
+    summary: 'A case study slot for real keyword research, website optimisation, blog writing or content strategy work.',
+    challenge: 'Add the website context, search problem and target audience.',
+    role: 'Confirm the SEO and content tasks you personally completed.',
+    execution: [
+      'Add keyword research and search-intent work.',
+      'Add on-page or technical improvements actually completed.',
+      'Add content published or updated, with links where possible.'
+    ],
+    outcome: 'Add verified Search Console or analytics outcomes only when available. Do not estimate traffic or ranking improvements.',
+    tools: ['Add the tools actually used'],
+    metrics: [],
+    evidence: 'Add approved page URLs, before-and-after examples or Search Console exports.'
   }
 ]
 
