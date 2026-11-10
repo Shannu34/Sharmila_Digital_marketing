@@ -6,8 +6,8 @@ export const profile = {
   phone: '',
   linkedin: 'https://www.linkedin.com/in/sharmila-k-56477a256/',
   resume: '/resume.pdf',
-  intro: 'I bring strategy, creative content and analytics together to help brands build a clearer, more useful digital presence.',
-  about: 'I am a digital marketing and web professional with experience across website initiatives, content, SEO activities, social media and UI/UX work. I enjoy understanding an audience, shaping useful communication and using data to make better decisions. My background also includes web technologies and analytics tools, which helps me connect marketing ideas with how digital experiences are built and measured.'
+  intro: 'I help brands strengthen their digital presence through SEO, social media, content, campaign planning and marketing analytics.'
+  about: 'I am focused on digital marketing, with experience contributing to digital initiatives, website content, SEO activities and social media communication. I enjoy understanding audiences, planning useful content, strengthening online visibility and using data to guide better marketing decisions. I also have knowledge of website development and UI/UX. These are supporting strengths that help me understand landing pages, user experience and the technical side of digital campaigns—but digital marketing is my primary career direction.'
 }
 
 export const services = [
@@ -21,7 +21,7 @@ export const services = [
 
 export const skillGroups = [
   { title: 'Digital Marketing', color: 'blue', items: ['SEO fundamentals', 'Keyword research', 'Social media planning', 'Content writing', 'Meta Ads concepts', 'Google Ads concepts', 'Google Analytics'] },
-  { title: 'Creative & Web', color: 'violet', items: ['Canva', 'Figma', 'WordPress', 'Wix', 'HTML', 'CSS', 'JavaScript'] },
+  { title: 'Supporting Creative & Web Skills', color: 'violet', items: ['Canva', 'Figma', 'WordPress', 'Wix', 'HTML', 'CSS', 'JavaScript'] },
   { title: 'Data & Reporting', color: 'mint', items: ['Microsoft Excel', 'Power BI', 'Tableau', 'SQL', 'Python for analysis'] }
 ]
 
@@ -43,9 +43,9 @@ export const experience = [
   },
   {
     company: 'Vikrics OPC Private Limited',
-    role: 'Digital Marketing, Web Applications & UI/UX',
+    role: 'Digital Marketing & Digital Initiatives',
     period: 'September 2024 – July 2026',
-    description: 'Contributed to website and digital initiatives across content, SEO activities, web application development and user-interface work.'
+    description: 'Contributed to digital marketing and website initiatives, including content-related work and SEO activities. Also used web application and UI/UX knowledge as supporting capabilities where relevant.'
   }
 ,
   {
@@ -81,21 +81,21 @@ export const projects = [
     slug: 'website-digital-initiatives',
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=88',
     imageAlt: 'Analytics dashboard on a desktop screen',
-    name: 'Website & Digital Initiatives',
+    name: 'Digital Marketing & Website Initiatives',
     client: 'Vikrics OPC Private Limited',
     category: 'Digital Experience',
     status: 'Experience-based case study',
     period: 'September 2024 – July 2026',
-    summary: 'A cross-functional body of work spanning website content, SEO activities, web application development and user-interface work.',
-    challenge: 'The work covered several connected digital touchpoints. The individual briefs, starting metrics and priority audiences varied by initiative and are not represented as one single campaign.',
-    role: 'Contributed to website and digital initiatives across content, SEO activities, web application development and UI work.',
+    summary: 'Experience contributing to website content and SEO-related digital initiatives, supported by practical knowledge of web technologies and user experience.'
+    challenge: 'The work involved supporting a company’s digital presence across website-related initiatives and content. Individual campaign briefs, audience definitions and baseline metrics varied and are not represented as one single campaign.'
+    role: 'Contributed to content and SEO-related website initiatives. Web development and UI/UX knowledge supported the work by helping connect content, website structure and user experience.'
     execution: [
-      'Supported website and digital content activities.',
+      'Supported website content and broader digital presence activities.',
       'Contributed to SEO-related work and website improvements.',
-      'Worked on web application development and user-interface tasks.',
-      'Connected content and interface considerations with the overall website experience.'
+      'Applied web and UI/UX knowledge as supporting skills for website experience and content presentation.',
+      'Considered how website structure and usability support marketing communication.'
     ],
-    outcome: 'Contributions were made across the listed workstreams. Verified business outcomes and analytics have not been supplied, so no traffic, lead or revenue claims are presented.',
+    outcome: 'Contributions were made across the listed digital and website workstreams. Verified campaign performance and analytics have not been supplied, so no traffic, lead or revenue claims are presented.',
     tools: ['Website platforms (project-specific)', 'SEO research', 'UI/UX design', 'Web technologies'],
     metrics: [],
     evidence: 'Detailed screenshots, public URLs and analytics can be added after confirming which materials are approved to share.',
