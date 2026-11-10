@@ -24,7 +24,10 @@ npm run preview
 Import this repository into Vercel. Use the Vite preset, with build command `npm run build` and output directory `dist`.
 
 ## Content updates
-Most portfolio copy is centralised in `src/data/portfolio.js`. Update that file when adding verified projects, achievements, services, or links.
+Most portfolio copy is centralised in `src/data/portfolio.js`. Update that file when adding verified projects, achievements, services, skills, or links. Project detail pages and the category filters update from this data automatically.
+
+## Automatic deployment
+The production site is connected to the GitHub repository through Vercel. Commits pushed to the `main` branch trigger a Vercel production deployment automatically when the repository integration is active. GitHub Actions also runs a production build check on every push to `main` and pull request. No manual Vercel publish step is part of the normal update workflow.
 
 ## Accuracy and privacy
 Only publish client names, campaign screenshots, testimonials, and performance metrics after confirming permission and accuracy. Replace the placeholder contact details and resume file before publishing.
