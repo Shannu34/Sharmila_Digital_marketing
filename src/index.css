@@ -113,3 +113,49 @@ h1,h2,h3,h4,.brand,.btn,.header-cta,.case-visual-mark,.service-card h3,.timeline
 .case-page-cta .btn{background:white;color:#16345c;white-space:nowrap}
 @keyframes caseImageIn{from{transform:scale(1.06);opacity:.65}to{transform:scale(1);opacity:1}}
 @media(max-width:700px){.case-visual{min-height:220px}.case-content{padding:25px 20px}.case-page-hero{min-height:440px}.case-page-hero-content{width:calc(100% - 38px);padding-bottom:42px}.back-link{margin-bottom:48px}.case-page-hero-content h1{font-size:43px;letter-spacing:-2px}.case-page-body{width:calc(100% - 38px);padding:42px 0 60px}.case-page-meta{grid-template-columns:1fr;gap:18px}.case-page-grid{grid-template-columns:1fr;gap:28px;padding:38px 0}.case-page-cta{padding:27px 23px;display:block}.case-page-cta .btn{margin-top:22px}.case-meta{font-size:8px}}
+
+
+/* Colourful, responsive portfolio polish */
+.hero-art{isolation:isolate;overflow:hidden}
+.hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.23;mix-blend-mode:multiply;filter:saturate(1.25)}
+.art-card{backdrop-filter:blur(6px)}
+.hero-actions{flex-wrap:wrap;row-gap:14px}
+.hero-social{display:inline-flex;align-items:center;gap:7px;color:#3269b7;font-size:12px;font-weight:700;padding:10px 0}
+.hero-social:hover{color:#7548e8}
+.process-section{padding:105px 0 112px;background:linear-gradient(135deg,#f5f7ff 0%,#fff8f4 52%,#f1fbfa 100%)}
+.process-section .section-heading{margin-bottom:38px}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.process-card{position:relative;background:#fff;border:1px solid #e8edf6;border-radius:12px;padding:25px 22px;min-height:225px;box-shadow:0 12px 35px #243b5b08;overflow:hidden}
+.process-card:after{content:'';position:absolute;width:120px;height:120px;border-radius:50%;right:-58px;bottom:-62px;background:linear-gradient(135deg,#dce9ff,#f0e3ff);opacity:.8}
+.process-card>span{font:800 11px 'Plus Jakarta Sans',sans-serif;color:#9aa9bf;letter-spacing:1.2px}
+.process-icon{width:43px;height:43px;display:grid;place-items:center;border-radius:13px;margin:18px 0 17px;background:linear-gradient(135deg,#e8f0ff,#f1eaff);color:#426dd0}
+.process-card:nth-child(2) .process-icon{background:linear-gradient(135deg,#fff0e5,#ffe4e8);color:#d76c65}
+.process-card:nth-child(3) .process-icon{background:linear-gradient(135deg,#e4faf4,#e2f1ff);color:#259b87}
+.process-card:nth-child(4) .process-icon{background:linear-gradient(135deg,#fff6d9,#ffe9f2);color:#b47a23}
+.process-card h3{font:700 17px 'Plus Jakarta Sans',sans-serif;color:#1a3151;margin:0 0 9px}
+.process-card p{font-size:11px;line-height:1.8;color:#718198;margin:0;position:relative;z-index:1}
+.project-filters{display:flex;flex-wrap:wrap;gap:9px;margin:28px 0 27px}
+.filter-chip{border:1px solid #dce5f1;border-radius:99px;padding:10px 15px;background:#fff;color:#61728b;font-size:10px;font-weight:700;cursor:pointer;transition:.2s}
+.filter-chip:hover{border-color:#9bb8e6;color:#285caa}
+.filter-chip.active{background:linear-gradient(120deg,#2458a3,#6d5ce7);border-color:transparent;color:#fff;box-shadow:0 8px 20px #4866b52a}
+.skill-groups{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:38px}
+.skill-group{border:1px solid #ffffff20;border-radius:12px;padding:25px;background:linear-gradient(145deg,#ffffff12,#ffffff06);min-height:230px;position:relative;overflow:hidden}
+.skill-group:after{content:'';position:absolute;width:160px;height:160px;border-radius:50%;right:-85px;top:-90px;background:#558eff30}
+.skill-group.violet:after{background:#a77bff35}
+.skill-group.mint:after{background:#49d5b435}
+.skill-group-index{font:800 10px 'Plus Jakarta Sans',sans-serif;color:#9bb8e2;letter-spacing:1.5px}
+.skill-group h3{font:700 18px 'Plus Jakarta Sans',sans-serif;color:#fff;margin:18px 0}
+.skill-group>div{display:flex;flex-wrap:wrap;gap:8px;position:relative;z-index:1}
+.skill-group>div span{font-size:10px;color:#e1ebf8;border:1px solid #ffffff26;background:#ffffff0b;border-radius:5px;padding:8px 10px}
+.case-page-hero{background:#142746}
+.case-page-hero-content h1{max-width:900px}
+.case-study-list{min-height:160px}
+.case-visual{border-radius:0}
+.case-content{background:linear-gradient(180deg,#fff,#fcfdff)}
+.contact-card{border-radius:14px;box-shadow:0 25px 65px #00000025}
+.contact-row{transition:color .2s}
+a.contact-row:hover{color:#a9caff}
+.site-header{position:sticky;top:0}
+@media(max-width:980px){.process-grid{grid-template-columns:repeat(2,1fr)}.skill-groups{grid-template-columns:1fr 1fr}.skill-group:last-child{grid-column:span 2}}
+@media(max-width:680px){.process-section{padding:78px 0}.process-grid,.skill-groups{grid-template-columns:1fr}.skill-group:last-child{grid-column:auto}.process-card{min-height:190px}.hero-social{padding-left:2px}.project-filters{gap:7px}.filter-chip{padding:9px 12px}.case-visual{min-height:210px}.case-content{padding:23px 19px}}
+@media(prefers-reduced-motion:reduce){.case-card-image,.hero-photo{transition:none;animation:none}}
