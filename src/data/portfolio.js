@@ -4,7 +4,7 @@ export const profile = {
   location: 'Hyderabad, Telangana, India',
   email: 'kethavathsharmila@gmail.com',
   phone: '', // Add a public business/WhatsApp number only if desired
-  linkedin: '',
+  linkedin: 'https://www.linkedin.com/in/sharmila-k-56477a256/',
   resume: '/resume.pdf',
   intro: 'I help businesses build a stronger digital presence through thoughtful content, search optimisation, social media and performance-focused marketing.',
   about: 'I am a digital marketing and web professional with experience spanning digital content, website work, SEO activities, social media and business operations. I enjoy connecting creative communication with practical analysis to help teams make better marketing decisions.'
@@ -55,6 +55,7 @@ export const certifications = [
 export const projects = [
   {
     slug: 'website-digital-initiatives',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=85',
     name: 'Website & Digital Initiatives',
     client: 'Vikrics OPC Private Limited',
     category: 'Digital Experience',
@@ -76,6 +77,7 @@ export const projects = [
   },
   {
     slug: 'social-media-campaign',
+    image: 'https://images.unsplash.com/photo-1611162616475-46b635cb6868?auto=format&fit=crop&w=1400&q=85',
     name: 'Social Media Campaign',
     client: 'Client / brand to be confirmed',
     category: 'Social Media Marketing',
@@ -96,6 +98,7 @@ export const projects = [
   },
   {
     slug: 'seo-content-project',
+    image: 'https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?auto=format&fit=crop&w=1400&q=85',
     name: 'SEO & Content Project',
     client: 'Website / brand to be confirmed',
     category: 'SEO & Content Marketing',
