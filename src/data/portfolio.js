@@ -2,7 +2,7 @@ export const profile = {
   name: 'Sharmila Kethavath',
   title: 'Digital Marketing Strategist',
   location: 'Hyderabad, Telangana, India',
-  email: '', // Add a professional email before launch
+  email: 'kethavathsharmila@gmail.com',
   phone: '', // Add a public business/WhatsApp number only if desired
   linkedin: '',
   resume: '/resume.pdf',
@@ -29,15 +29,15 @@ export const skills = [
 export const experience = [
   {
     company: 'Vikrics OPC Private Limited',
-    role: 'Digital marketing, web application and UI/UX responsibilities',
-    period: 'September 2024 – Present',
-    description: 'Work across website and digital initiatives, including content, SEO activities, product and interface work. Exact marketing responsibilities and role title should be confirmed before public launch.'
+    role: 'Digital Marketing, Web Applications & UI/UX',
+    period: 'September 2024 – July 2026',
+    description: 'Contributed to website and digital initiatives across content, SEO activities, web application development and user-interface work.'
   },
   {
-    company: 'Vedatreya Medical Education Pvt. Ltd.',
-    role: 'Digital Marketing & Administrative Executive',
-    period: 'Dates to confirm',
-    description: 'Administrative and data-support activities, including reviewing and organising student information. Confirm the exact dates and marketing responsibilities before publishing.'
+    company: 'Vedhas Technology Solutions',
+    role: 'Digital Marketing',
+    period: 'September 2026 – Present',
+    description: 'Working on digital marketing activities. Specific responsibilities, campaigns and measurable outcomes can be added as project details are confirmed.'
   }
 ]
 
