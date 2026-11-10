@@ -46,7 +46,26 @@ function App() {
 
       <section className="services-section" id="services"><div className="section-wrap"><div className="section-kicker">02 — WHAT I DO</div><SectionHeading eyebrow="AREAS OF FOCUS" title="Strategy that connects every touchpoint." description="A practical mix of creative thinking, audience understanding and performance measurement." /><div className="service-grid">{services.map((s, i) => { const icons = [Search, Share2, Megaphone, BarChart3, PenTool, CheckCircle2]; const Icon = icons[i]; return <motion.article className="service-card" key={s.title} whileHover={{ y: -5 }}><div className="service-top"><span>0{i + 1}</span><Icon size={22} /></div><h3>{s.title}</h3><p>{s.description}</p><span className="service-arrow"><ArrowUpRight size={18} /></span></motion.article> })}</div></div></section>
 
-      <section className="work-section section-wrap" id="work"><div className="section-kicker">03 — SELECTED WORK</div><SectionHeading eyebrow="PROJECTS & CASE STUDIES" title="Show the thinking. Share the work." description="A transparent look at project goals, execution and evidence. Case-study placeholders will be replaced with approved project details and real campaign data." /><div className="project-grid">{projects.map((p, i) => <article className="project-card" key={p.name}><div className={`project-visual visual-${i + 1}`}><div className="visual-label">{p.category}</div><div className="visual-number">0{i + 1}</div><div className="visual-orb" /><div className="visual-caption">{i === 0 ? 'COMMUNITY / CONTENT' : i === 1 ? 'DISCOVERY / SEARCH' : 'REACH / CONVERSION'}</div></div><div className="project-info"><div className="project-status">{p.status}</div><h3>{p.name}</h3><p>{p.summary}</p><div className="project-detail"><b>OBJECTIVE</b><span>{p.objective}</span></div><div className="project-detail"><b>APPROACH</b><span>{p.approach}</span></div><div className="project-detail"><b>RESULTS</b><span>{p.results}</span></div></div></article>)}</div></section>
+      <section className="work-section section-wrap" id="work">
+        <div className="section-kicker">03 — SELECTED WORK</div>
+        <SectionHeading eyebrow="REAL PROJECT CASE STUDIES" title="The brief. The work. The evidence." description="A clear breakdown of project context, your contribution, execution and outcomes. One experience-based case study is included now; additional case studies are clearly marked until their details are confirmed." />
+        <div className="case-study-list">{projects.map((p, i) => <article className={p.featured ? 'case-study featured-case' : 'case-study'} key={p.slug}>
+          <div className="case-visual"><div className="case-visual-top"><span>CASE STUDY / 0{i + 1}</span><span>{p.category}</span></div><div className="case-visual-mark">{String(i + 1).padStart(2, '0')}</div><div className="case-visual-bottom">{p.client}</div></div>
+          <div className="case-content">
+            <div className="case-meta"><span className="case-status">{p.status}</span><span>{p.period}</span></div>
+            <h3>{p.name}</h3><p className="case-summary">{p.summary}</p>
+            <div className="case-facts">
+              <div><b>CONTEXT / CHALLENGE</b><p>{p.challenge}</p></div>
+              <div><b>MY ROLE</b><p>{p.role}</p></div>
+              <div><b>EXECUTION</b><ul>{p.execution.map(item => <li key={item}>{item}</li>)}</ul></div>
+              <div><b>OUTCOME & EVIDENCE</b><p>{p.outcome}</p><p className="case-evidence">{p.evidence}</p></div>
+            </div>
+            <div className="case-tools"><b>TOOLS / PLATFORMS</b><div>{p.tools.map(tool => <span key={tool}>{tool}</span>)}</div></div>
+            {p.metrics.length > 0 && <div className="case-metrics">{p.metrics.map(metric => <div key={metric.label}><strong>{metric.value}</strong><span>{metric.label}</span></div>)}</div>}
+          </div>
+        </article>)}</div>
+        <p className="case-note">Portfolio integrity note: results and metrics will be published only after they are verified and approved for sharing.</p>
+      </section>
 
       <section className="skills-section"><div className="section-wrap skills-grid"><div><div className="section-kicker light-kicker">04 — TOOLKIT</div><SectionHeading light eyebrow="SKILLS & PLATFORMS" title="The tools behind the thinking." description="A working toolkit across digital marketing, creative production, web and analytics. Practical proficiency can be added to each skill as it is verified." /></div><div className="skill-cloud">{skills.map(skill => <span key={skill}>{skill}</span>)}</div></div></section>
 
