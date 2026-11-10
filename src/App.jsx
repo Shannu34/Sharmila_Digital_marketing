@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ArrowUpRight, ArrowRight, CheckCircle2, Mail, MapPin, Linkedin, Download, Search, Megaphone, BarChart3, PenTool, Share2, Menu, X, Sparkles } from 'lucide-react'
+import { ArrowUpRight, ArrowRight, CheckCircle2, Mail, MapPin, Linkedin, Search, Megaphone, BarChart3, PenTool, Share2, Menu, X, Sparkles } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import SectionHeading from './components/SectionHeading'
 import { profile, services, skillGroups, processSteps, experience, certifications, projects, blogTopics, testimonials } from './data/portfolio'
