@@ -47,6 +47,24 @@ export const experience = [
     period: 'September 2024 – July 2026',
     description: 'Contributed to website and digital initiatives across content, SEO activities, web application development and user-interface work.'
   }
+,
+  {
+    company: 'HDLC Technologies',
+    role: 'Web Development Intern',
+    period: 'May 2023 – June 2023',
+    description: 'Completed a remote web development internship during the final phase of undergraduate studies.'
+  }
+]
+
+export const education = [
+  {
+    qualification: 'Bachelor of Engineering — Computer Science',
+    institution: 'Stanley College of Engineering & Technology for Women',
+    university: 'Osmania University',
+    period: '2020 – 2024',
+    result: 'CGPA: 7.03',
+    location: 'Hyderabad, Telangana'
+  }
 ]
 
 export const certifications = [
