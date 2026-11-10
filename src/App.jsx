@@ -1,16 +1,52 @@
 import { motion } from 'framer-motion'
 import { ArrowUpRight, ArrowRight, CheckCircle2, Mail, MapPin, Linkedin, Download, Search, Megaphone, BarChart3, PenTool, Share2, Menu, X, Sparkles } from 'lucide-react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import SectionHeading from './components/SectionHeading'
 import { profile, services, skills, experience, certifications, projects, blogTopics, testimonials } from './data/portfolio'
 
 const fade = { hidden: { opacity: 0, y: 22 }, show: { opacity: 1, y: 0, transition: { duration: .55 } } }
 
+function CaseStudyPage({ project, onBack }) {
+  return <main className="case-page">
+    <section className="case-page-hero">
+      <img src={project.image} alt={project.name} />
+      <div className="case-page-shade" />
+      <div className="case-page-hero-content">
+        <button className="back-link" onClick={onBack}>← Back to portfolio</button>
+        <span>{project.category} · CASE STUDY</span>
+        <h1>{project.name}</h1>
+        <p>{project.summary}</p>
+      </div>
+    </section>
+    <section className="case-page-body">
+      <div className="case-page-meta"><div><small>CLIENT / ORGANISATION</small><strong>{project.client}</strong></div><div><small>PERIOD</small><strong>{project.period}</strong></div><div><small>PROJECT STATUS</small><strong>{project.status}</strong></div></div>
+      <div className="case-page-grid">
+        <article><span className="eyebrow">01 / THE CHALLENGE</span><h2>Understanding the brief</h2><p>{project.challenge}</p></article>
+        <article><span className="eyebrow">02 / MY CONTRIBUTION</span><h2>My role</h2><p>{project.role}</p></article>
+        <article><span className="eyebrow">03 / EXECUTION</span><h2>How the work moved forward</h2><ul>{project.execution.map(item => <li key={item}>{item}</li>)}</ul></article>
+        <article><span className="eyebrow">04 / OUTCOME</span><h2>What came out of it</h2><p>{project.outcome}</p><p className="case-evidence-note">{project.evidence}</p></article>
+      </div>
+      <div className="case-page-tools"><span className="eyebrow">TOOLS & PLATFORMS</span><div>{project.tools.map(tool => <span key={tool}>{tool}</span>)}</div></div>
+      <div className="case-page-cta"><div><span className="eyebrow">LET'S CONNECT</span><h2>Have a project in mind?</h2><p>Let's discuss how thoughtful digital marketing can support your goals.</p></div><a className="btn btn-primary" href="mailto:kethavathsharmila@gmail.com">Start a conversation ↗</a></div>
+    </section>
+  </main>
+}
+
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [activeCase, setActiveCase] = useState(() => projects.find(p => window.location.hash === '#case/' + p.slug)?.slug || '')
+  useEffect(() => {
+    const syncRoute = () => setActiveCase(projects.find(p => window.location.hash === '#case/' + p.slug)?.slug || '')
+    window.addEventListener('hashchange', syncRoute)
+    return () => window.removeEventListener('hashchange', syncRoute)
+  }, [])
+  const openCase = (slug) => { window.location.hash = 'case/' + slug; setActiveCase(slug); window.scrollTo({ top: 0, behavior: 'smooth' }) }
+  const backToPortfolio = () => { window.location.hash = 'work'; setActiveCase(''); window.scrollTo({ top: 0, behavior: 'smooth' }) }
+  const selectedCase = projects.find(p => p.slug === activeCase)
   const nav = [['About', '#about'], ['Services', '#services'], ['Work', '#work'], ['Experience', '#experience'], ['Insights', '#insights'], ['Contact', '#contact']]
   const closeMenu = () => setMenuOpen(false)
 
+  if (selectedCase) return <div className="site-shell detail-shell"><header className="site-header"><a className="brand" href="/#home"><span className="brand-mark">S</span><span>SHARMILA<span className="brand-dot">.</span></span></a><a className="header-cta" href="/#contact">Let's talk <ArrowUpRight size={16} /></a></header><CaseStudyPage project={selectedCase} onBack={backToPortfolio} /><footer className="footer"><a className="brand" href="/#home"><span className="brand-mark">S</span><span>SHARMILA<span className="brand-dot">.</span></span></a><span>© {new Date().getFullYear()} Sharmila Kethavath</span><a href="/#home">Back to top ↑</a></footer></div>
   return <div className="site-shell">
     <header className="site-header">
       <a className="brand" href="#home" aria-label="Sharmila Kethavath home"><span className="brand-mark">S</span><span>SHARMILA<span className="brand-dot">.</span></span></a>
@@ -50,7 +86,7 @@ function App() {
         <div className="section-kicker">03 — SELECTED WORK</div>
         <SectionHeading eyebrow="REAL PROJECT CASE STUDIES" title="The brief. The work. The evidence." description="A clear breakdown of project context, your contribution, execution and outcomes. One experience-based case study is included now; additional case studies are clearly marked until their details are confirmed." />
         <div className="case-study-list">{projects.map((p, i) => <article className={p.featured ? 'case-study featured-case' : 'case-study'} key={p.slug}>
-          <div className="case-visual"><div className="case-visual-top"><span>CASE STUDY / 0{i + 1}</span><span>{p.category}</span></div><div className="case-visual-mark">{String(i + 1).padStart(2, '0')}</div><div className="case-visual-bottom">{p.client}</div></div>
+          <div className="case-visual"><img className="case-card-image" src={p.image} alt="" loading="lazy" /><div className="case-image-overlay" /><div className="case-visual-top"><span>CASE STUDY / 0{i + 1}</span><span>{p.category}</span></div><div className="case-visual-mark">{String(i + 1).padStart(2, '0')}</div><div className="case-visual-bottom">{p.client}</div></div>
           <div className="case-content">
             <div className="case-meta"><span className="case-status">{p.status}</span><span>{p.period}</span></div>
             <h3>{p.name}</h3><p className="case-summary">{p.summary}</p>
@@ -60,7 +96,7 @@ function App() {
               <div><b>EXECUTION</b><ul>{p.execution.map(item => <li key={item}>{item}</li>)}</ul></div>
               <div><b>OUTCOME & EVIDENCE</b><p>{p.outcome}</p><p className="case-evidence">{p.evidence}</p></div>
             </div>
-            <div className="case-tools"><b>TOOLS / PLATFORMS</b><div>{p.tools.map(tool => <span key={tool}>{tool}</span>)}</div></div>
+            <div className="case-tools"><b>TOOLS / PLATFORMS</b><div>{p.tools.map(tool => <span key={tool}>{tool}</span>)}</div></div><button className="case-open-link" onClick={() => openCase(p.slug)}>Explore full case study <ArrowUpRight size={16} /></button>
             {p.metrics.length > 0 && <div className="case-metrics">{p.metrics.map(metric => <div key={metric.label}><strong>{metric.value}</strong><span>{metric.label}</span></div>)}</div>}
           </div>
         </article>)}</div>
@@ -75,7 +111,7 @@ function App() {
 
       {testimonials.length > 0 && <section className="section-wrap testimonial-section"><SectionHeading eyebrow="KIND WORDS" title="What collaborators say." /><div className="testimonial-grid">{testimonials.map(t => <blockquote key={t.name}><p>“{t.quote}”</p><cite>{t.name} · {t.role}</cite></blockquote>)}</div></section>}
 
-      <section className="contact-section" id="contact"><div className="section-wrap contact-grid"><div><div className="section-kicker light-kicker">07 — GET IN TOUCH</div><span className="eyebrow">HAVE A PROJECT OR AN OPPORTUNITY?</span><h2>Let's make<br /><em>something meaningful.</em></h2><p>Open to digital marketing roles, collaborations and freelance projects.</p></div><div className="contact-card"><div className="contact-card-label">START A CONVERSATION</div>{profile.email ? <a href={`mailto:${profile.email}`} className="contact-row"><Mail />{profile.email}<ArrowUpRight /></a> : <div className="contact-row muted-row"><Mail />Add your professional email<ArrowUpRight /></div>}{profile.linkedin ? <a href={profile.linkedin} target="_blank" rel="noreferrer" className="contact-row"><Linkedin />LinkedIn profile<ArrowUpRight /></a> : <div className="contact-row muted-row"><Linkedin />Add your LinkedIn URL<ArrowUpRight /></div>}<div className="contact-row"><MapPin />{profile.location}</div><a href={profile.resume} className="btn btn-white"><Download size={17} /> Download resume</a><small>Resume download will work after adding public/resume.pdf.</small></div></div></section>
+      <section className="contact-section" id="contact"><div className="section-wrap contact-grid"><div><div className="section-kicker light-kicker">07 — GET IN TOUCH</div><span className="eyebrow">HAVE A PROJECT OR AN OPPORTUNITY?</span><h2>Let's make<br /><em>something meaningful.</em></h2><p>Open to digital marketing roles, collaborations and freelance projects.</p></div><div className="contact-card"><div className="contact-card-label">START A CONVERSATION</div>{profile.email ? <a href={`mailto:${profile.email}`} className="contact-row"><Mail />{profile.email}<ArrowUpRight /></a> : <div className="contact-row muted-row"><Mail />Add your professional email<ArrowUpRight /></div>}{profile.linkedin ? <a href={profile.linkedin} target="_blank" rel="noreferrer" className="contact-row"><Linkedin />View LinkedIn profile<ArrowUpRight /></a> : null}<div className="contact-row"><MapPin />{profile.location}</div><a href={profile.resume} className="btn btn-white"><Download size={17} /> Download resume</a><small>Resume download will work after adding public/resume.pdf.</small></div></div></section>
     </main>
     <footer className="footer"><a className="brand" href="#home"><span className="brand-mark">S</span><span>SHARMILA<span className="brand-dot">.</span></span></a><span>© {new Date().getFullYear()} Sharmila Kethavath. Built with intent.</span><a href="#home">Back to top ↑</a></footer>
   </div>
