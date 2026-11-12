@@ -170,3 +170,24 @@ a.contact-row:hover{color:#a9caff}
 .education-list article>b{font-size:10px;color:#377dff}
 .education-list article>small{font-size:10px;color:#8c9aab;text-align:right}
 @media(max-width:680px){.education-block{grid-template-columns:1fr;gap:18px}.education-list article{grid-template-columns:1fr}.education-list article>small{text-align:left}}
+
+
+/* Contact enquiry form */
+.contact-card{padding:30px}
+.contact-form{display:grid;gap:16px}
+.form-field{display:grid;gap:7px}
+.form-field label{font-size:10px;font-weight:700;letter-spacing:.5px;color:#dbe7f8}
+.form-field input,.form-field textarea{width:100%;box-sizing:border-box;border:1px solid #ffffff24;border-radius:7px;background:#102541;color:#fff;padding:12px 13px;font:500 12px 'DM Sans',sans-serif;outline:none;transition:border-color .2s,box-shadow .2s}
+.form-field input::placeholder,.form-field textarea::placeholder{color:#8298b5}
+.form-field input:focus,.form-field textarea:focus{border-color:#8cb7ff;box-shadow:0 0 0 3px #8cb7ff20}
+.form-field textarea{resize:vertical;min-height:108px;line-height:1.6}
+.contact-submit{width:100%;justify-content:center;border:0;cursor:pointer;font:700 12px 'DM Sans',sans-serif}
+.contact-submit:disabled{opacity:.65;cursor:wait}
+.form-feedback{font-size:11px;line-height:1.6;margin:0;padding:11px 12px;border-radius:7px}
+.form-feedback.success{background:#143f3a;color:#a8f0d8}
+.form-feedback.error{background:#4b2630;color:#ffd0d8}
+.contact-direct{display:grid;gap:10px;border-top:1px solid #ffffff20;margin-top:22px;padding-top:18px}
+.contact-direct a,.contact-direct span{display:flex;align-items:center;gap:9px;color:#c9d7e9;font-size:11px;text-decoration:none}
+.contact-direct svg{color:#8cb7ff;flex-shrink:0}
+.contact-direct a:hover{color:#fff}
+@media(max-width:680px){.contact-card{padding:22px 18px}.form-field input,.form-field textarea{font-size:16px}}
