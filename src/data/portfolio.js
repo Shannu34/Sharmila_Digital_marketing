@@ -86,9 +86,9 @@ export const projects = [
     category: 'Digital Experience',
     status: 'Experience-based case study',
     period: 'September 2024 – July 2026',
-    summary: 'Experience contributing to website content and SEO-related digital initiatives, supported by practical knowledge of web technologies and user experience.'
-    challenge: 'The work involved supporting a company’s digital presence across website-related initiatives and content. Individual campaign briefs, audience definitions and baseline metrics varied and are not represented as one single campaign.'
-    role: 'Contributed to content and SEO-related website initiatives. Web development and UI/UX knowledge supported the work by helping connect content, website structure and user experience.'
+    summary: 'Experience contributing to website content and SEO-related digital initiatives, supported by practical knowledge of web technologies and user experience.',
+    challenge: 'The work involved supporting a company’s digital presence across website-related initiatives and content. Individual campaign briefs, audience definitions and baseline metrics varied and are not represented as one single campaign.',
+    role: 'Contributed to content and SEO-related website initiatives. Web development and UI/UX knowledge supported the work by helping connect content, website structure and user experience.',
     execution: [
       'Supported website content and broader digital presence activities.',
       'Contributed to SEO-related work and website improvements.',
