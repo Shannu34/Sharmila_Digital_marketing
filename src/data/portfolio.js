@@ -6,7 +6,7 @@ export const profile = {
   phone: '',
   linkedin: 'https://www.linkedin.com/in/sharmila-k-56477a256/',
   resume: '/resume.pdf',
-  intro: 'I help brands strengthen their digital presence through SEO, social media, content, campaign planning and marketing analytics.'
+  intro: 'I help brands strengthen their digital presence through SEO, social media, content, campaign planning and marketing analytics.',
   about: 'I am focused on digital marketing, with experience contributing to digital initiatives, website content, SEO activities and social media communication. I enjoy understanding audiences, planning useful content, strengthening online visibility and using data to guide better marketing decisions. I also have knowledge of website development and UI/UX. These are supporting strengths that help me understand landing pages, user experience and the technical side of digital campaigns—but digital marketing is my primary career direction.'
 }
 
