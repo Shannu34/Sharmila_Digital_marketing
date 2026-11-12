@@ -37,6 +37,33 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [projectFilter, setProjectFilter] = useState('All')
   const [activeCase, setActiveCase] = useState(() => projects.find(p => window.location.hash === '#case/' + p.slug)?.slug || '')
+  const [contactStatus, setContactStatus] = useState({ type: '', message: '' })
+  const [contactSending, setContactSending] = useState(false)
+  const handleContactSubmit = async (event) => {
+    event.preventDefault()
+    const form = event.currentTarget
+    setContactSending(true)
+    setContactStatus({ type: '', message: '' })
+    const formData = new FormData(form)
+    const payload = Object.fromEntries(formData.entries())
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/kethavathsharmila@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(payload)
+      })
+      const result = await response.json()
+      if (String(result.success) !== 'true') {
+        throw new Error(result.message || 'Your message could not be sent. Please try again.')
+      }
+      form.reset()
+      setContactStatus({ type: 'success', message: 'Thank you! Your enquiry has been sent successfully. I will get back to you soon.' })
+    } catch (error) {
+      setContactStatus({ type: 'error', message: error.message || 'Something went wrong. Please email me directly instead.' })
+    } finally {
+      setContactSending(false)
+    }
+  }
   useEffect(() => {
     const syncRoute = () => setActiveCase(projects.find(p => window.location.hash === '#case/' + p.slug)?.slug || '')
     window.addEventListener('hashchange', syncRoute)
@@ -117,7 +144,18 @@ function App() {
 
       {testimonials.length > 0 && <section className="section-wrap testimonial-section"><SectionHeading eyebrow="KIND WORDS" title="What collaborators say." /><div className="testimonial-grid">{testimonials.map(t => <blockquote key={t.name}><p>“{t.quote}”</p><cite>{t.name} · {t.role}</cite></blockquote>)}</div></section>}
 
-      <section className="contact-section" id="contact"><div className="section-wrap contact-grid"><div><div className="section-kicker light-kicker">08 — GET IN TOUCH</div><span className="eyebrow">HAVE A PROJECT OR AN OPPORTUNITY?</span><h2>Let's make<br /><em>something meaningful.</em></h2><p>Open to digital marketing roles, collaborations and freelance projects.</p></div><div className="contact-card"><div className="contact-card-label">START A CONVERSATION</div>{profile.email ? <a href={`mailto:${profile.email}`} className="contact-row"><Mail />{profile.email}<ArrowUpRight /></a> : <div className="contact-row muted-row"><Mail />Add your professional email<ArrowUpRight /></div>}{profile.linkedin ? <a href={profile.linkedin} target="_blank" rel="noreferrer" className="contact-row"><Linkedin />View LinkedIn profile<ArrowUpRight /></a> : null}<div className="contact-row"><MapPin />{profile.location}</div><a href={profile.linkedin} target="_blank" rel="noreferrer" className="btn btn-white"><Linkedin size={17} /> Connect on LinkedIn <ArrowUpRight size={16} /></a><small>For a resume copy or detailed project discussion, please get in touch by email.</small></div></div></section>
+      <section className="contact-section" id="contact"><div className="section-wrap contact-grid"><div><div className="section-kicker light-kicker">08 — GET IN TOUCH</div><span className="eyebrow">HAVE A PROJECT OR AN OPPORTUNITY?</span><h2>Let's make<br /><em>something meaningful.</em></h2><p>Open to digital marketing roles, collaborations and freelance projects.</p></div><div className="contact-card"><div className="contact-card-label">SEND AN ENQUIRY</div>
+          <form className="contact-form" onSubmit={handleContactSubmit}>
+            <input type="hidden" name="_subject" value="New portfolio enquiry — Sharmila Kethavath" />
+            <input type="hidden" name="_template" value="table" />
+            <div className="form-field"><label htmlFor="contact-name">Your name</label><input id="contact-name" name="name" type="text" placeholder="Enter your full name" autoComplete="name" required minLength={2} /></div>
+            <div className="form-field"><label htmlFor="contact-phone">Phone number</label><input id="contact-phone" name="phone" type="tel" placeholder="e.g. +91 98765 43210" autoComplete="tel" required pattern="[+]?[0-9 ()-]{10,18}" title="Enter a valid phone number" /></div>
+            <div className="form-field"><label htmlFor="contact-requirement">How can I help?</label><textarea id="contact-requirement" name="requirement" placeholder="Tell me about your requirement, project or opportunity..." rows="4" required minLength={10} /></div>
+            <button className="btn btn-white contact-submit" type="submit" disabled={contactSending}>{contactSending ? 'Sending enquiry…' : 'Submit enquiry'} <ArrowUpRight size={16} /></button>
+            {contactStatus.message && <p className={`form-feedback ${contactStatus.type}`} role="status" aria-live="polite">{contactStatus.message}</p>}
+          </form>
+          <div className="contact-direct"><a href={`mailto:${profile.email}`}><Mail size={15} /> {profile.email}</a>{profile.linkedin ? <a href={profile.linkedin} target="_blank" rel="noreferrer"><Linkedin size={15} /> LinkedIn profile</a> : null}<span><MapPin size={15} />{profile.location}</span></div>
+          <small>Your details will be used only to respond to your enquiry.</small></div></div></section>
     </main>
     <footer className="footer"><a className="brand" href="#home"><span className="brand-mark">S</span><span>SHARMILA<span className="brand-dot">.</span></span></a><span>© {new Date().getFullYear()} Sharmila Kethavath. Built with intent.</span><a href="#home">Back to top ↑</a></footer>
   </div>
